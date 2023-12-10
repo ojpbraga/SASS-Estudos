@@ -1,0 +1,9 @@
+// Import:
+@import './variaveis';
+@import './header';
+
+.contato {
+    @include flexCenter(column, $secondary);
+    // extend: "copiando e colando propriedades
+    @extend header;
+}

@@ -1,0 +1,30 @@
+// Agrupamento/Nesting: juntar os elementos em um principal
+
+// Mixing: funções prontas, ou seja, reutilizável em vários elementos
+// É possível utilizar parâmetros também (parâmetro)
+@mixin flexCenter($direction, $bg) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: $direction;
+    background: $bg;
+}
+
+header {
+    // incluindo a função:
+    @include flexCenter(row, blue);
+    color: white;
+
+    button {
+        background: $secondary;
+        // Utilizando after, before, hover:
+        &:hover {
+            background: #a4a110;
+        }
+        &::after {
+            content: 'teste';
+        }
+    }
+    
+}
